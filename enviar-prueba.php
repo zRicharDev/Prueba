@@ -39,11 +39,12 @@ try {
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = ('Me estoy contactando con usted ');
-    $mail->Body    =  $contenido;
+    $mail->Body    = $contenido ;
    
 
     $mail->send();
-    echo 'El mensaje se envió correctamente';
+     
+     header("Location:index.html");
 } catch (Exception $e) {
     echo "Hubo un error al enviar el correo {$mail->ErrorInfo}";
 }
